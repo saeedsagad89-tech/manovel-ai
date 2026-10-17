@@ -1,23 +1,15 @@
-
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "manovel-ai"
-version = "0.1.0"
+version = "0.2.0"
 requires-python = ">=3.12"
-dependencies = [
-    "flask",
-    "google-genai"
-]
+dependencies = []
 
 [dependency-groups]
 dev = [
     "workers-py",
-    "workers-runtime-sdk"
+    "workers-runtime-sdk",
 ]
-
-[tool.setuptools]
-package-dir = {"" = "src"}
-py-modules = ["apps", "worker"]
