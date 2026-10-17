@@ -103,8 +103,10 @@ def chat():
         )
         return jsonify({"reply": response.text or "لم يصل رد نصي."})
     except Exception:
-        app.logger.exception("Gemini request failed")
-        return jsonify({"error": "حدث خطأ في الاتصال بالذكاء الاصطناعي. تحقق من إعدادات Render والمفتاح."}), 500
-      from workers import wsgi
+        
+    app.logger.exception("Gemini request failed")
+    return jsonify({"error": "حدث خطأ في الاتصال بالذكاء الاصطناعي. تحقق من إعدادات Render والمفتاح."}), 500
+ 
+from workers import wsgi
 
 Default = wsgi.entrypoint(app)
